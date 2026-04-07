@@ -86,23 +86,23 @@ export function LoginForm() {
       </section>
 
       <section className="flex items-center justify-center px-5 py-10 sm:px-8 lg:bg-[linear-gradient(180deg,rgba(247,243,238,0.02),rgba(247,243,238,0.06))] lg:px-12">
-        <Card className="w-full max-w-md border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] shadow-[0_28px_60px_-34px_rgba(0,0,0,0.55)]">
+        <Card className="w-full max-w-md border-brand-300/55 bg-[linear-gradient(180deg,rgba(247,243,238,0.98),rgba(255,255,255,0.96))] shadow-[0_28px_60px_-34px_rgba(0,0,0,0.55)]">
           <CardHeader className="space-y-3">
-            <p className="text-sm font-medium text-brand-300">Acesso seguro</p>
-            <CardTitle className="text-3xl font-semibold tracking-[-0.03em] text-brand-100">
+            <p className="text-sm font-medium text-brand-600">Acesso seguro</p>
+            <CardTitle className="text-3xl font-semibold tracking-[-0.03em] text-brand-950">
               Entrar
             </CardTitle>
-            <CardDescription className="text-brand-300/80">
+            <CardDescription className="text-brand-600">
               Base de acesso inicial pronta para integrar com Supabase Auth.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-brand-100">E-mail</label>
+                <label className="text-sm font-medium text-brand-950">E-mail</label>
                 <Input
                   type="email"
-                  className="border-white/10 bg-white/[0.04] text-brand-100 placeholder:text-brand-300/60 focus-visible:border-brand-500 focus-visible:ring-brand-500/20"
+                  className="border-brand-300/65 bg-white text-brand-950 placeholder:text-brand-600/70 focus-visible:border-brand-500 focus-visible:ring-brand-500/20"
                   {...register("email")}
                 />
                 {errors.email ? (
@@ -111,10 +111,10 @@ export function LoginForm() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-brand-100">Senha</label>
+                <label className="text-sm font-medium text-brand-950">Senha</label>
                 <Input
                   type="password"
-                  className="border-white/10 bg-white/[0.04] text-brand-100 placeholder:text-brand-300/60 focus-visible:border-brand-500 focus-visible:ring-brand-500/20"
+                  className="border-brand-300/65 bg-white text-brand-950 placeholder:text-brand-600/70 focus-visible:border-brand-500 focus-visible:ring-brand-500/20"
                   {...register("password")}
                 />
                 {errors.password ? (
@@ -138,10 +138,10 @@ export function LoginForm() {
               </Button>
             </form>
 
-            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm text-brand-300/85">
+            <div className="mt-6 rounded-2xl border border-brand-300/45 bg-brand-100/55 p-4 text-sm text-brand-600">
               A navegacao inicial ja esta pronta:
               {" "}
-              <Link href="/dashboard" className="font-medium text-brand-100 underline">
+              <Link href="/dashboard" className="font-medium text-brand-950 underline">
                 ir para dashboard
               </Link>
             </div>
