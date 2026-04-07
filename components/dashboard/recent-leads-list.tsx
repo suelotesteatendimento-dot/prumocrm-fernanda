@@ -1,4 +1,5 @@
 import type { Lead } from "@/lib/types/lead";
+import { formatDateOnly } from "@/lib/utils/date";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LeadStatusBadge } from "@/components/leads/lead-status-badge";
 
@@ -30,7 +31,7 @@ export function RecentLeadsList({ leads }: { leads: Lead[] }) {
               <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-600">
                 <span>{lead.origem}</span>
                 <span>{lead.telefone}</span>
-                <span>{new Intl.DateTimeFormat("pt-BR").format(new Date(lead.data_entrada))}</span>
+                <span>{formatDateOnly(lead.data_entrada)}</span>
               </div>
             </div>
           ))

@@ -1,5 +1,5 @@
 import type { Route } from "next";
-import { ChartColumnIncreasing, LayoutDashboard, LogOut, Users } from "lucide-react";
+import { ChartColumnIncreasing, LayoutDashboard, LogOut, Settings, Users } from "lucide-react";
 
 export const navigationItems = [
   {
@@ -20,6 +20,11 @@ export const navigationItems = [
 ];
 
 export const secondaryNavigationItems = [
+  {
+    title: "Perfil",
+    href: "/perfil" as Route,
+    icon: Settings
+  },
   {
     title: "Sair",
     href: "/login" as Route,

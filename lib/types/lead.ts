@@ -1,4 +1,5 @@
 import type { Database } from "@/lib/supabase/database.types";
+import { getTodayDateOnly } from "@/lib/utils/date";
 import type {
   CreateLeadInput,
   LeadFormInput,
@@ -45,6 +46,6 @@ export function mapLeadToFormValues(lead?: Lead | null): LeadFormValues {
     origem: lead?.origem ?? "Instagram",
     status: lead?.status ?? "em_aberto",
     observacoes: lead?.observacoes ?? "",
-    data_entrada: lead?.data_entrada ?? new Date().toISOString().slice(0, 10)
+    data_entrada: lead?.data_entrada ?? getTodayDateOnly()
   };
 }

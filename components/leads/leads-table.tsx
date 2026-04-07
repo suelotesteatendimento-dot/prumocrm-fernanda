@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-table";
 import { PencilLine, Plus, Search, Trash2 } from "lucide-react";
 import type { Lead } from "@/lib/types/lead";
+import { formatDateOnly } from "@/lib/utils/date";
 import { leadStatuses, leadStatusLabels } from "@/lib/validations/lead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -21,8 +22,6 @@ type LeadsTableProps = {
   onEdit: (lead: Lead) => void;
   onDelete: (lead: Lead) => void;
 };
-
-const dateFormatter = new Intl.DateTimeFormat("pt-BR");
 
 export const LeadsTable = memo(function LeadsTable({
   leads,
@@ -72,7 +71,7 @@ export const LeadsTable = memo(function LeadsTable({
       {
         accessorKey: "data_entrada",
         header: "Entrada",
-        cell: ({ row }) => dateFormatter.format(new Date(row.original.data_entrada))
+        cell: ({ row }) => formatDateOnly(row.original.data_entrada)
       },
       {
         id: "acoes",

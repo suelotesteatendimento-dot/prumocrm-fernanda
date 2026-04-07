@@ -39,7 +39,9 @@ export const leadSchema = z.object({
     errorMap: () => ({ message: "Selecione um status válido." })
   }),
   observacoes: z.string().trim().max(1000, "Máximo de 1000 caracteres.").nullable(),
-  data_entrada: z.string().min(1, "Informe a data de entrada.")
+  data_entrada: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Informe uma data valida no formato YYYY-MM-DD.")
 });
 
 export const leadFormSchema = leadSchema.extend({

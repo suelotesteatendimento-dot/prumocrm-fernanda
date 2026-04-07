@@ -5,8 +5,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { GripVertical } from "lucide-react";
 import type { Lead } from "@/lib/types/lead";
-
-const dateFormatter = new Intl.DateTimeFormat("pt-BR");
+import { formatDateOnly } from "@/lib/utils/date";
 
 const PipelineCardBody = memo(function PipelineCardBody({ lead }: { lead: Lead }) {
   return (
@@ -27,7 +26,7 @@ const PipelineCardBody = memo(function PipelineCardBody({ lead }: { lead: Lead }
         </div>
         <p className="text-xs uppercase tracking-[0.08em] text-brand-600">
           Entrada em{" "}
-          {dateFormatter.format(new Date(lead.data_entrada))}
+          {formatDateOnly(lead.data_entrada)}
         </p>
       </div>
     </>
